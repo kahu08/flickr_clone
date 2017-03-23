@@ -1,0 +1,15 @@
+<%= render "layouts/errors", object: @photo%>
+
+<%= form_for @photo, html: {multiPart: true} do |f| %>
+
+<%=f.label :photo%>
+<%= f.text_field :photo%>
+
+<%=f.label :caption%>
+<%= f.text_field :tag%>
+
+<%=f.label :image%>
+<%= f.file_field :image%>
+
+<%=f.submit%>
+<%end%>

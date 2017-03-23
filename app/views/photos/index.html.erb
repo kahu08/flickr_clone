@@ -1,0 +1,20 @@
+<h1>Photos#index</h1>
+<p>Find me in app/views/photos/index.html.erb</p>
+
+<ul>
+  <% @photos.each do |photo|%>
+  <li><%= image_tag photo.image.url(:medium)%>
+    <%= photo.tag%>
+    <p>
+    <% if photo.user == current_user%>
+      <%= link_to 'Edit', edit_photo_path(photo)%>
+      <%= link_to 'Delete', photo_path(photo), method: "delete",
+                    :data => {:confirm => "Are you sure?",
+                                   :method => "delete"}%>
+    <%end%>
+    </p>
+  </li>
+  <%end%>
+</ul>
+
+<p><%= link_to 'Add a photo', new_photo_path%></p>
