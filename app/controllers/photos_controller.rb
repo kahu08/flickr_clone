@@ -2,7 +2,8 @@ class PhotosController < ApplicationController
   #if someone isn't logged in they can't perform crud functions
   before_action :authenticate_user!, except: [:index, :show]
   def show
-    @photo = Photo.all
+    @photo = Photo.find(params[:id])
+  
   end
 
   def new
