@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def show
     @photo = Photo.find(params[:id])
-  
+    @comment = @photo.comments.build
   end
 
   def new

@@ -6,6 +6,6 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = current_user.photo.comment.build
+    # @comment = current_user.photo.comment.build
   end
 end

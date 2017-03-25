@@ -6,7 +6,7 @@
 <strong>view comments</strong>
 <% if @photo.comments.any?%>
 <ul>
-  <%= @photo.comments do |comment|%>
+  <% @photo.comments do |comment|%>
     <li><%= comment.comment%></li>
   <%end%>
 </ul>
@@ -16,4 +16,5 @@
 <br>
 <strong>No comments available</strong>
 <% end %>
- <% link_to 'Add comment', new_photo_comment_path(photo)%>
+
+ <p><% link_to 'Add comment', new_photo_comment_path(@photo)%></p>
